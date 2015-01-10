@@ -6,30 +6,31 @@
 /*   By: tdieumeg <tdieumeg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/10 14:37:14 by tdieumeg          #+#    #+#             */
-/*   Updated: 2015/01/10 15:02:18 by tdieumeg         ###   ########.fr       */
+/*   Updated: 2015/01/10 17:37:57 by tdieumeg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <sstream>
 #include <ncurses.h>
 #include "Window.hpp"
 
-Window::Window(int const x, int const y)
+Window::Window(int const x, int const y) : _clock(0), _x(x), _y(y)
 {
-	std::cout << "class Window parameter constructor call." << std::endl;
-	this->_x = x;
-	this->_y = y;
+	std::cout << "[CONSTRUCT] Window "
+		<< this->getX() << " " << this->getY() << std::endl;
 }
 
-Window::Window(Window const & src)
+Window::Window(Window const & src) : _clock(0)
 {
-	std::cout << "class Window copy constructor call." << std::endl;
 	*this = src;
+	std::cout << "[CONSTRUCT] Window"
+		<< this->getX() << " " << this->getY() << std::endl;
 }
 
 Window::~Window( void )
 {
-	std::cout << "class Window destructor call." << std::endl;
+	std::cout << "[DESTRUCTOR] Window" << std::endl;
 	endwin();
 }
 
@@ -74,8 +75,8 @@ int					Window::getY(void) const
 	return this->_y;
 }
 
-Window::Window( void )
+Window::Window( void ) : _clock(0)
 {
-	std::cout << "class Window default constructor call." << std::endl;
+	std::cout << "[CONSTRUCT] Window" << std::endl;
 }
 

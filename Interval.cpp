@@ -6,7 +6,7 @@
 /*   By: afaucher <afaucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/10 13:38:32 by afaucher          #+#    #+#             */
-/*   Updated: 2015/01/10 14:46:46 by afaucher         ###   ########.fr       */
+/*   Updated: 2015/01/10 15:38:51 by tdieumeg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ std::string	Interval::toString() const
 	ostr << "Interval : Initial Value " << this->_initial << " Current Value " <<
 		this->value() << std::endl;
 	return ostr.str();
+}
+
+void			Interval::refresh()
+{
+	this->_initial = std::clock();
 }
 
 unsigned int	Interval::value() const
