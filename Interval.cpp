@@ -6,11 +6,10 @@
 /*   By: afaucher <afaucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/10 13:38:32 by afaucher          #+#    #+#             */
-/*   Updated: 2015/01/10 14:46:46 by afaucher         ###   ########.fr       */
+/*   Updated: 2015/01/10 15:10:21 by afaucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Interval.hpp"
 #include <ctime>
 
 Interval::Interval( void ) : _initial(std::clock())

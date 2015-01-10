@@ -6,11 +6,9 @@
 /*   By: afaucher <afaucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/10 14:14:01 by afaucher          #+#    #+#             */
-/*   Updated: 2015/01/10 14:44:15 by afaucher         ###   ########.fr       */
+/*   Updated: 2015/01/10 15:10:09 by afaucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "Fps.hpp"
 
 Fps::Fps( void ) : _m_fps(0), _m_fpscount(0)
 {
