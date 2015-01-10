@@ -6,11 +6,12 @@
 /*   By: afaucher <afaucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/10 13:38:32 by afaucher          #+#    #+#             */
-/*   Updated: 2015/01/10 15:10:21 by afaucher         ###   ########.fr       */
+/*   Updated: 2015/01/10 19:55:52 by afaucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ctime>
+#include "Interval.hpp"
 
 Interval::Interval( void ) : _initial(std::clock())
 {
@@ -44,6 +45,11 @@ std::string	Interval::toString() const
 	ostr << "Interval : Initial Value " << this->_initial << " Current Value " <<
 		this->value() << std::endl;
 	return ostr.str();
+}
+
+void			Interval::refresh()
+{
+	this->_initial = std::clock();
 }
 
 unsigned int	Interval::value() const

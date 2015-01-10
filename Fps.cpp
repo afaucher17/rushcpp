@@ -6,9 +6,11 @@
 /*   By: afaucher <afaucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/10 14:14:01 by afaucher          #+#    #+#             */
-/*   Updated: 2015/01/10 15:10:09 by afaucher         ###   ########.fr       */
+/*   Updated: 2015/01/10 19:56:17 by afaucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Fps.hpp"
 
 Fps::Fps( void ) : _m_fps(0), _m_fpscount(0)
 {
@@ -49,11 +51,11 @@ void			Fps::update()
 {
 	this->_m_fpscount++;
 
-	if (this->_m_fpsinterval.value() > 1000)
+	if (this->_m_fpsinterval.value() > CLOCKS_PER_SEC)
 	{
 		this->_m_fps = this->_m_fpscount;
 		this->_m_fpscount = 0;
-		this->_m_fpsinterval = Interval();
+		this->_m_fpsinterval.refresh();
 	}
 	return ;
 }
