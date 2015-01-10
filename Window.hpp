@@ -19,6 +19,7 @@ class Window
 	private:
 		Window( void );
 
+		int					_clock;
 		int					_x;
 		int					_y;
 };
