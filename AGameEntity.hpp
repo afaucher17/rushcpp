@@ -4,7 +4,7 @@
 class AGameEntity
 {
 	public:
-		AGameEntity(int x, int y, Sprite const & sprite);
+		AGameEntity(int x, int y, int wdt, int hei, Sprite const & sprite);
 		AGameEntity(AGameEntity const & src);
 		virtual ~AGameEntity( void );
 
