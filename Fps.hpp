@@ -3,6 +3,8 @@
 # include <string>
 # include <sstream>
 # include <iostream>
+# include "Interval.hpp"
+# include "Console.hpp"
 
 class Fps
 {
@@ -20,6 +22,7 @@ class Fps
 		unsigned int	_m_fps;
 		unsigned int	_m_fpscount;
 		Interval		_m_fpsinterval;
+
 };
 
 std::ostream &		operator<<(std::ostream & o, Fps const & rhs);

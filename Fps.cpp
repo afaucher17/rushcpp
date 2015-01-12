@@ -6,28 +6,31 @@
 /*   By: afaucher <afaucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/10 14:14:01 by afaucher          #+#    #+#             */
-/*   Updated: 2015/01/10 19:56:17 by afaucher         ###   ########.fr       */
+/*   Updated: 2015/01/11 21:14:38 by frale-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "Fps.hpp"
+#include <Ncurses.h>
+#include <cstdlib>
+
+extern WINDOW *g_debug;
 
 Fps::Fps( void ) : _m_fps(0), _m_fpscount(0)
 {
-	std::cout << "[CONSTRUCTED] FPS" << std::endl;
+	
 	return ;
 }
 
 Fps::Fps(Fps const & src)
 {
-	std::cout << "[CONSTRUCTED] FPS" << std::endl;
+	
 	*this = src;
 	return ;
 }
 
 Fps::~Fps( void )
 {
-	std::cout << "[DESTRUCTED] FPS" << std::endl;
+	
 	return ;
 }
 
@@ -70,3 +73,5 @@ std::ostream &	operator<<(std::ostream & o, Fps const & rhs)
 	o << rhs.toString();
 	return o;
 }
+
+

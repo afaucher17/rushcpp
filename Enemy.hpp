@@ -1,21 +1,31 @@
 #ifndef ENEMY_HPP
 # define ENEMY_HPP
-# include "Character.hpp"
+# include "ACharacter.hpp"
+# include "MoveController.hpp"
 
-class Enemy : public ACharacter
+class Enemy : public virtual ACharacter
 {
 	public:
-		Enemy(int x, int y, std::string pattern);
+		Enemy(int x, int y, int frate, int speed, std::string pattern);
 		Enemy(Enemy const & src);
 		virtual ~Enemy( void );
-		Enemy &	operator=(Enemy const & rhs);
+		Enemy &					operator=(Enemy const & rhs);
 
-		virtual void		destroy(void);
-		virtual void		refresh(void);
+		Pattern &				getPattern(void) const;
+
+		virtual void			refresh(void);
+		virtual Missile *		fireMissile(std::string pattern);
+		virtual	void			collidesWith(AGameEntity const & ge);
+
+		static int				enemyCount;
 
 	protected:
-		Pattern		_pattern;
+		Pattern					_pattern;
+		Position				_mslOrigin;
+		MoveController			_moveCtrl;
+
 	private:
+		void			_checkOutOfBound();
 		Enemy(void);
 };
 

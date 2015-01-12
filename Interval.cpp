@@ -1,34 +1,23 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Interval.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: afaucher <afaucher@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/10 13:38:32 by afaucher          #+#    #+#             */
-/*   Updated: 2015/01/10 19:55:52 by afaucher         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
+#include <ncurses.h>
 #include <ctime>
 #include "Interval.hpp"
 
 Interval::Interval( void ) : _initial(std::clock())
 {
-	std::cout << "[CONSTRUCT] Interval" << std::endl;
+	
 	return ;
 }
 
 Interval::Interval(Interval const & src)
 {
-	std::cout << "[CONSTRUCT] Interval" << std::endl;
+	
 	*this = src;
 	return ;
 }
 
 Interval::~Interval( void )
 {
-	std::cout << "[DESTRUCT] Interval" << std::endl;
+	
 	return ;
 }
 
