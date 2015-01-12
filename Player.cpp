@@ -6,14 +6,13 @@ Player::Player() : ACharacter(5, 20, 0, 3, ALLY), _quit(false), _life(3)
 {
 	std::string *tsprite = new std::string[5];
 
-	tsprite[0] = "/---\\";
-	tsprite[1] = "  |  ";
-	tsprite[2] = " (o) ";
-	tsprite[3] = "  |  ";
-	tsprite[4] = "\\---/";
-	this->_hb.setWidth(2);
+	tsprite[0] = "  __        ";
+	tsprite[1] = "  \\ \\_____";
+	tsprite[2] = "###[==_____>";
+	tsprite[3] = "  /_/       ";
+	this->_hb.setWidth(12);
 	this->_hb.setHeight(4);
-	this->_sp.set(tsprite, 5);
+	this->_sp.set(tsprite, 4);
 	this->_mslOrigin.update(this->_hb.getWidth() + 1, this->_hb.getHeight() / 2);
 }
 
