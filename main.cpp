@@ -129,9 +129,9 @@ int					main(void)
 		buff.clear();
 		while (itv.value() < CLOCKS_PER_SEC / 120);
 		buff << "FPS: " << fps.get();
-		DisplaySprite::display(buff.str(), Position(row - 9, 1), 2, debug.getWindow());
-		DisplaySprite::display(game.getLife(), Position(row - 60, 1), 2, debug.getWindow());
-		DisplaySprite::display(Game::getScore(), Position(row - 80, 1), 2, debug.getWindow());
+		DisplaySprite::display(buff.str(), Position(13, 0), 2, debug.getWindow());
+		DisplaySprite::display(game.getLife(), Position(25, 0), 2, debug.getWindow());
+		DisplaySprite::display(Game::getScore(), Position(38, 0), 2, debug.getWindow());
 		i++;
 		game.refresh();
 		gamew.refreshWindow();
